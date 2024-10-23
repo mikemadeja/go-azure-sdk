@@ -435,6 +435,7 @@ const (
 	ReportTimeframeTypeMonthToDate ReportTimeframeType = "MonthToDate"
 	ReportTimeframeTypeWeekToDate  ReportTimeframeType = "WeekToDate"
 	ReportTimeframeTypeYearToDate  ReportTimeframeType = "YearToDate"
+	ReportTimeframeTypeNone        ReportTimeframeType = "None"
 )
 
 func PossibleValuesForReportTimeframeType() []string {
@@ -443,6 +444,7 @@ func PossibleValuesForReportTimeframeType() []string {
 		string(ReportTimeframeTypeMonthToDate),
 		string(ReportTimeframeTypeWeekToDate),
 		string(ReportTimeframeTypeYearToDate),
+		string(ReportTimeframeTypeNone),
 	}
 }
 
@@ -465,6 +467,7 @@ func parseReportTimeframeType(input string) (*ReportTimeframeType, error) {
 		"monthtodate": ReportTimeframeTypeMonthToDate,
 		"weektodate":  ReportTimeframeTypeWeekToDate,
 		"yeartodate":  ReportTimeframeTypeYearToDate,
+		"none":        ReportTimeframeTypeNone,
 	}
 	if v, ok := vals[strings.ToLower(input)]; ok {
 		return &v, nil
@@ -478,12 +481,14 @@ func parseReportTimeframeType(input string) (*ReportTimeframeType, error) {
 type ReportType string
 
 const (
-	ReportTypeUsage ReportType = "Usage"
+	ReportTypeUsage      ReportType = "Usage"
+	ReportTypeActualCost ReportType = "ActualCost"
 )
 
 func PossibleValuesForReportType() []string {
 	return []string{
 		string(ReportTypeUsage),
+		string(ReportTypeActualCost),
 	}
 }
 
